@@ -1,0 +1,37 @@
+[
+  {
+    "id": "TC01",
+    "type": "direct_query",
+    "question": "Chào bạn, bạn có thể giới thiệu quy chế học vụ cơ bản của Đại học VinUni không?",
+    "expected_behavior": "Chatbot trả lời trực tiếp từ System Prompt, không cần gọi bất kỳ Tool nào.",
+    "complexity": "Low"
+  },
+  {
+    "id": "TC02",
+    "type": "single_tool_query",
+    "question": "Hãy tra cứu thông tin học vụ của sinh viên SV2026001.",
+    "expected_behavior": "Agent nhận diện nhu cầu tra cứu, tự động phát sinh Tool Call 'academic_query' với mã SV2026001.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC03",
+    "type": "appointment_booking",
+    "question": "Tôi là sinh viên SV2026001, hãy đặt giúp tôi một lịch hẹn tư vấn học vụ vào lúc 14:00 ngày 18/09/2026.",
+    "expected_behavior": "Agent tự động phát sinh Tool Call 'schedule_appointment' với đúng thời gian và thông tin sinh viên.",
+    "complexity": "Medium"
+  },
+  {
+    "id": "TC04",
+    "type": "multi_step_reasoning",
+    "question": "Em là sinh viên SV2026001 đang gặp khó khăn trong việc chọn môn kỳ tới. Bạn xem cố vấn học tập của em là ai rồi đặt giúp em một lịch hẹn với thầy/cô đó vào 09:30 sáng thứ Sáu tuần này nhé.",
+    "expected_behavior": "Agent thực hiện chuỗi suy luận ReAct: Tra cứu cố vấn học tập của sinh viên trước, sau đó tiến hành đặt lịch hẹn.",
+    "complexity": "High"
+  },
+  {
+    "id": "TC05",
+    "type": "edge_case_handling",
+    "question": "Kiểm tra giúp tôi bảng điểm và tiến độ tốt nghiệp của mã sinh viên SV9999999.",
+    "expected_behavior": "Agent nhận kết quả NOT_FOUND từ Tool và đưa ra phản hồi lịch sự, chính xác không bịa đặt dữ liệu.",
+    "complexity": "Medium"
+  }
+]
